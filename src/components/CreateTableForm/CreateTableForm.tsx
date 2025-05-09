@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Select } from 'shared/ui';
 import { formInputNames, mockOptions } from 'shared/consts/mockData';
 import { ITableColumns } from 'shared/consts/types';
+import { useAppDispatch } from 'store/hooks/hooks';
+import { createTable } from '../../store/slices/tableSlice';
 
 const inputStyles = 'border border-[#E6ECEF] rounded-[4px] p-[14px] text-[12px] font-normal w-full';
 
@@ -10,6 +12,7 @@ interface Props {
 }
 
 export const CreateTableForm = ({ onClose }: Props) => {
+  const dispatch = useAppDispatch();
   const [formData, setFormData] = useState<ITableColumns>({
     firstColumn: '',
     secondColumn: '',
@@ -45,7 +48,7 @@ export const CreateTableForm = ({ onClose }: Props) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData, 'formData');
+    dispatch(createTable(formData));
     onClose();
   };
 

@@ -9,3 +9,8 @@ export interface ITableColumns {
   thirdColumn: string;
   forthColumn: string;
 }
+
+export interface ITable {
+  id: string;
+  columns: ITableColumns;
+}
