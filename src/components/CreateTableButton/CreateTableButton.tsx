@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { CreateTableForm } from 'components';
-import { useOnClickOutside } from 'shared/hooks/useOnClickOutside';
+import { useOnClickOutside } from 'shared';
 
 export const CreateTableButton = () => {
   const [isOpen, setIsOpen] = useState(false);

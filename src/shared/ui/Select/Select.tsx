@@ -1,8 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react';
 import clsx from 'clsx';
-import { IOptions } from 'shared/consts/types';
+import { IOptions, useOnClickOutside } from 'shared';
 import { Icon } from 'components';
-import { useOnClickOutside } from 'shared/hooks/useOnClickOutside';
 
 interface Props {
   value: string;

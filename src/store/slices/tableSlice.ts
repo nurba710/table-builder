@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ITable, ITableColumns } from 'shared/consts/types';
+import { ITable, ITableColumns } from 'shared';
 
 const tableSlice = createSlice({
   name: 'table',
@@ -40,8 +40,13 @@ const tableSlice = createSlice({
         state.tables.push(copy);
       }
     },
+    changeTableOrder: (state, action: PayloadAction<{ oldIndex: number; newIndex: number }>) => {
+      const { oldIndex, newIndex } = action.payload;
+      const movedTable = state.tables.splice(oldIndex, 1)[0];
+      state.tables.splice(newIndex, 0, movedTable);
+    },
   },
 });
 
-export const { createTable, updateCell, createCopy } = tableSlice.actions;
+export const { createTable, updateCell, createCopy, changeTableOrder } = tableSlice.actions;
 export default tableSlice.reducer;

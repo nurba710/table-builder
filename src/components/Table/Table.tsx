@@ -2,9 +2,7 @@ import { useRef, useState } from 'react';
 import clsx from 'clsx';
 import { updateCell } from 'store/slices/tableSlice';
 import { useAppDispatch } from 'store/hooks/hooks';
-import { CopyButton, TableCell } from 'shared/ui';
-import { useOnClickOutside } from 'shared/hooks/useOnClickOutside';
-import { ITable } from 'shared/consts/types';
+import { CopyButton, ITable, TableCell, useOnClickOutside } from 'shared';
 
 interface TableProps {
   table: ITable;

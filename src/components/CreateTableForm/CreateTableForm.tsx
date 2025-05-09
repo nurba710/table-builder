@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import { Select } from 'shared/ui';
-import { formInputNames, mockOptions } from 'shared/consts/mockData';
-import { ITableColumns } from 'shared/consts/types';
 import { useAppDispatch } from 'store/hooks/hooks';
-import { createTable } from '../../store/slices/tableSlice';
+import { createTable } from 'store/slices/tableSlice';
+import { formInputNames, ITableColumns, mockOptions, Select } from 'shared';
 
 const inputStyles = 'border border-[#E6ECEF] rounded-[4px] p-[14px] text-[12px] font-normal w-full';
 
