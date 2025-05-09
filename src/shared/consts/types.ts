@@ -13,4 +13,5 @@ export interface ITableColumns {
 export interface ITable {
   id: string;
   columns: ITableColumns;
+  rows: string[][];
 }
